@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>ipcn.php</string>
+			<key>Title</key>
+			<string>IP Location</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Get IP location from ip.cn</string>
+	<key>Extension Identifier</key>
+	<string>com.mysteriouss.popclip.extension.ipcn</string>
+	<key>Extension Name</key>
+	<string>ip.cn</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
