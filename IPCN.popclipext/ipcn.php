@@ -6,7 +6,7 @@ if($host == null){
   return;
 }
 
-$ipaddr = gethostbyname($host);
+$ipaddr = getAddrByHost($host);
 if($ipaddr == null){
   echo 'dns error';
   return;
@@ -55,4 +55,11 @@ function parse($url){
     $url = "http://".$url;
   $info = parse_url($url);
   return $info;
+}
+
+function getAddrByHost($host, $timeout = 3) {
+   $query = `nslookup -timeout=$timeout -retry=1 $host`;
+   if(preg_match('/\nAddress: (.*)\n/', $query, $matches))
+      return trim($matches[1]);
+   return $host;
 }
