@@ -21,6 +21,8 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
   curl_setopt($ch, CURLOPT_HEADER, 0);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+  curl_setopt($ch, CURLOPT_TIMEOUT,2);
   $data = curl_exec($ch);
   $status_code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
   curl_close($ch);
@@ -39,6 +41,8 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($ch, CURLOPT_TIMEOUT,2);
     $data = curl_exec($ch);
     $status_code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
     curl_close($ch);
@@ -82,7 +86,7 @@ function parse($url){
 }
 
 function getAddrByHost($host, $timeout = 3) {
-   $query = `nslookup -timeout=$timeout -retry=1 $host`;
+   $query = `nslookup -timeout=$timeout -retry=2 $host`;
    if(preg_match('/\nAddress: (.*)\n/', $query, $matches))
       return trim($matches[1]);
    return $host;
