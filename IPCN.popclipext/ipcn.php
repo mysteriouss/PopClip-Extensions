@@ -22,7 +22,7 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
-  curl_setopt($ch, CURLOPT_TIMEOUT,2);
+  curl_setopt($ch, CURLOPT_TIMEOUT,5);
   $data = curl_exec($ch);
   $status_code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
   curl_close($ch);
@@ -42,7 +42,7 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
-    curl_setopt($ch, CURLOPT_TIMEOUT,2);
+    curl_setopt($ch, CURLOPT_TIMEOUT,5);
     $data = curl_exec($ch);
     $status_code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
     curl_close($ch);
@@ -68,6 +68,8 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
   curl_setopt($ch, CURLOPT_HEADER, 0);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+  curl_setopt($ch, CURLOPT_TIMEOUT,5);
   $data = curl_exec($ch);
   curl_close($ch);
   if (!empty($data)) {
