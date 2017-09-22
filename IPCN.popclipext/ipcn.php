@@ -1,5 +1,11 @@
 <?php
-$input=getenv('POPCLIP_TEXT');
+$input = getenv('POPCLIP_TEXT');
+$ipaddr = $input;
+if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE
+  ip_cn($ipaddr);
+  return;
+}
+
 $host = parse($input)['host'];
 if($host == null){
   echo 'error';
@@ -42,21 +48,7 @@ function ip_cn($ipaddr, $fail){
     if(strlen($ipaddr)){
       ipip_net($ipaddr);
     }else{
-
-      $api = 'http://ns1.dnspod.net:6666/';
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $api );
-      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-      //curl_setopt($ch, CURLOPT_HEADER, 0);
-      //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-      curl_setopt($ch, CURLOPT_USERAGENT, 'curl/7.43.0');
-      curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
-      curl_setopt($ch, CURLOPT_TIMEOUT,5);
-      //$data = curl_exec($ch); //$data no content, wrong http response
-      //$status_code = curl_getinfo($ch,CURLINFO_HTTP_CODE); // $status_code == 0
-      //print curl_error($ch);
-      curl_close($ch);
-      //ipip_net($data); //do nothing
+      echo 'invalid';
     }
   }
 }
@@ -80,7 +72,7 @@ function ipip_net($ipaddr){
     if (!empty($data)) {
       $json = json_decode($data,true);
       if(is_array($json)){
-        echo 'IP: '.$ipaddr . ' 来自: '. implode(' ', $json);
+        echo 'IP: '.$ipaddr . ' 来自: '. implode(' ', $json). '「ipip.net」';
       }else{
         echo $json;
       }
