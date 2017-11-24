@@ -24,7 +24,7 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
   ip_cn('');
 }
 
-function ip_cn($ipaddr, $fail){
+function ip_cn($ipaddr, $fail=''){
   $api = 'http://ip.cn/';
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $api . $ipaddr);
