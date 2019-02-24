@@ -25,7 +25,7 @@ if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FIL
 }
 
 function ip_cn($ipaddr, $fail=''){
-  $api = 'http://ip.cn/';
+  $api = 'https://ip.cn/';
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $api . $ipaddr);
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
@@ -56,7 +56,7 @@ function ip_cn($ipaddr, $fail=''){
 function ipip_net($ipaddr){
   if(!$ipaddr) return;
 
-  $api = 'http://freeapi.ipip.net/';
+  $api = 'https://freeapi.ipip.net/';
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL,$api . $ipaddr);
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
