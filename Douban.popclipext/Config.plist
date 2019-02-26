@@ -6,20 +6,6 @@
 	<array>
                 <dict>
                         <key>Image File</key>
-                        <string>Douban.png</string>
-                        <key>Regular Expression</key>
-                        <string>(?s)^.{1,}$</string>
-                        <key>Title</key>
-                        <string>Douban</string>
-                        <key>URL</key>
-                        <string>https://rarbg.is/torrents.php?search={popclip text}</string>
-                        <key>Requirements</key>
-                        <array>
-                                <string>option-douban-main=1</string>
-                        </array>
-                </dict>
-                <dict>
-                        <key>Image File</key>
                         <string>Douban-movie.png</string>
                         <key>Regular Expression</key>
                         <string>(?s)^.{1,}$</string>
@@ -44,6 +30,20 @@
                         <key>Requirements</key>
                         <array>
                                 <string>option-douban-music=1</string>
+                        </array>
+                </dict>
+                <dict>
+                        <key>Image File</key>
+                        <string>Douban.png</string>
+                        <key>Regular Expression</key>
+                        <string>(?s)^.{1,}$</string>
+                        <key>Title</key>
+                        <string>Douban</string>
+                        <key>URL</key>
+                        <string>https://www.douban.com/search?q={popclip text}</string>
+                        <key>Requirements</key>
+                        <array>
+                                <string>option-douban-main=1</string>
                         </array>
                 </dict>
 	</array>
