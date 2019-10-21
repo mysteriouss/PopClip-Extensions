@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>Douban-movie.png</string>
+			<key>Title</key>
+			<string>Douban</string>
+			<key>URL</key>
+			<string>https://movie.douban.com/subject_search?search_text={popclip text}</string>
+		</dict>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>RARBG</string>
+			<key>URL</key>
+			<string>https://rarbg.is/torrents.php?search={popclip text}</string>
+		</dict>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>JAVBUS</string>
+			<key>URL</key>
+			<string>https://www.javbus.com/{popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Douban+RARBG+Javbus</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string></string>
+			<key>Name</key>
+			<string>mysteri0uss</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for information about movies.</string>
+	<key>Extension Identifier</key>
+	<string>com.mysteriouss.popclip.extension.rarbg</string>
+	<key>Extension Name</key>
+	<string>RARBG</string>
+	<key>Required Software Version</key>
+	<integer>719</integer>
+</dict>
+</plist>
