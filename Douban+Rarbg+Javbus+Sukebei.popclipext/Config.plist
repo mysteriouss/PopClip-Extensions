@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>RARBG</string>
 			<key>URL</key>
-			<string>https://rarbg.is/torrents.php?search={popclip text}</string>
+			<string>https://rarbgprx.org/torrents.php?search={popclip text}</string>
 		</dict>
 		<dict>
 			<key>Regular Expression</key>
@@ -28,12 +28,20 @@
 			<key>URL</key>
 			<string>https://www.javbus.com/{popclip text}</string>
 		</dict>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>SUK</string>
+			<key>URL</key>
+			<string>https://sukebei.nyaa.si/?f=0&amp;c=0_0&amp;q={popclip text}</string>
+		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Name</key>
-			<string>Douban+RARBG+Javbus</string>
+			<string>Douban+RARBG+Javbus+Sukebei</string>
 		</dict>
 	</array>
 	<key>Credits</key>
