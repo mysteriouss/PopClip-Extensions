@@ -19,7 +19,7 @@ if($ipaddr == null){
 }
 
 if(filter_var($ipaddr, FILTER_VALIDATE_IP)){ //, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE
-  ipip_net($ipaddr);
+  haoip_cn($ipaddr);
 }else{
   echo $ipaddr;
 }
